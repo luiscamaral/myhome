@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectPreferences>
+<DefaultUser>lamaral</DefaultUser>
+<DefaultSecondUser></DefaultSecondUser>
+<ClientCertificateThumbprint>53DB29E66927BC08CE65939930BB66E0871A3964</ClientCertificateThumbprint>
+<MultipleClientCertificateThumbprints></MultipleClientCertificateThumbprints>
+<ServerCertificateThumbprint></ServerCertificateThumbprint>
+<DefaultHostName>vpn.ord.us.nr-net.work</DefaultHostName>
+<DefaultHostAddress></DefaultHostAddress>
+<DefaultGroup>NR-ENG-FULL</DefaultGroup>
+<ProxyHost></ProxyHost>
+<ProxyPort></ProxyPort>
+<SDITokenType>none</SDITokenType>
+<ControllablePreferences>
+<LocalLanAccess>true</LocalLanAccess>
+<DisableCaptivePortalDetection>true</DisableCaptivePortalDetection></ControllablePreferences>
+</AnyConnectPreferences>

@@ -1,0 +1,209 @@
+{
+ "repos": {
+  "614e56d24f2c0a7b9530abdc": {
+   "paths": [
+    "/Users/lamaral/go-workspace/src/github.com/newrelic/terraform-provider-newrelic"
+   ],
+   "defaultPath": "/Users/lamaral/go-workspace/src/github.com/newrelic/terraform-provider-newrelic"
+  },
+  "614e643c315fc17b94984881": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/monitoring"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/monitoring"
+  },
+  "6154852c4862ea0f6eca4144": {
+   "paths": [
+    "/Users/lamaral/go-workspace/src/github.com/newrelic/newrelic-client-go"
+   ],
+   "defaultPath": "/Users/lamaral/go-workspace/src/github.com/newrelic/newrelic-client-go"
+  },
+  "6160870994734b25d7e95511": {
+   "paths": [
+    "/Users/lamaral/dev/ingest/metric-api-consumer"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ingest/metric-api-consumer"
+  },
+  "615efb798f8d532d3ec17966": {
+   "paths": [
+    "/Users/lamaral/go-workspace/src/github.com/newrelic/terraform-provider-newrelic"
+   ],
+   "defaultPath": "/Users/lamaral/go-workspace/src/github.com/newrelic/terraform-provider-newrelic"
+  },
+  "6169b2ec992bb7443647a2a5": {
+   "paths": [
+    "/Users/lamaral/dev/tools/grandctl"
+   ],
+   "defaultPath": "/Users/lamaral/dev/tools/grandctl"
+  },
+  "6160863f02bcc35fb6d703db": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/monitoring"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/monitoring"
+  },
+  "617074cfaa70c959b24ea3e7": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/Nerdlets"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/Nerdlets"
+  },
+  "6176d4dbd9c6b205bce1518d": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/uds-lag-analyzer-np"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/uds-lag-analyzer-np"
+  },
+  "60f7519ce6516575f3337150": {
+   "paths": [
+    "/Users/lamaral/dev/newrelic/nr1-victory-visualizations"
+   ],
+   "defaultPath": "/Users/lamaral/dev/newrelic/nr1-victory-visualizations"
+  },
+  "618d6bb30351be3c64cd3829": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/protocol-buffers-encodings"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/protocol-buffers-encodings"
+  },
+  "617999ce88dc0805de08e077": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/ssre-nerdpack"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/ssre-nerdpack"
+  },
+  "619db89ae08d964ad6f6ad39": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/bologna-milano"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/bologna-milano"
+  },
+  "6144c4870d92df115cda6d1a": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/ssre-slack-bot"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/ssre-slack-bot"
+  },
+  "611c1ce3b87ef5795bcb5ae0": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/clm10-keda-scaler"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/clm10-keda-scaler"
+  },
+  "61dc859c58f42d73990af0e0": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/Bologna/server"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/Bologna/server"
+  },
+  "61ed04f45995796f5b32130f": {
+   "paths": [
+    "/Users/lamaral/prov/courses/css/advanced-css-course"
+   ],
+   "defaultPath": "/Users/lamaral/prov/courses/css/advanced-css-course"
+  },
+  "615348584862ea0f6eca3f5d": {
+   "paths": [
+    "/Users/lamaral/dev/commune/kafka-clients"
+   ],
+   "defaultPath": "/Users/lamaral/dev/commune/kafka-clients"
+  },
+  "60fee94f9b46f41036f3d172": {
+   "paths": [
+    "/Users/lamaral/dev/commune/npm-setup"
+   ],
+   "defaultPath": "/Users/lamaral/dev/commune/npm-setup"
+  },
+  "60ef5bc56f9f49104b8c0994": {
+   "paths": [
+    "/Users/lamaral/dev/data-services/Interviews"
+   ],
+   "defaultPath": "/Users/lamaral/dev/data-services/Interviews"
+  },
+  "60d09fed70ee410cf5be3780": {
+   "paths": [
+    "/Users/lamaral/dev/events-pipeline/dropping-debatcher"
+   ],
+   "defaultPath": "/Users/lamaral/dev/events-pipeline/dropping-debatcher"
+  },
+  "60d34c8ea14d8a401fa83299": {
+   "paths": [
+    "/Users/lamaral/dev/ingest/metric-api-consumer"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ingest/metric-api-consumer"
+  },
+  "61f03e8274576e66288b6b48": {
+   "paths": [
+    "/Users/lamaral/dev/ingest/synthetics"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ingest/synthetics"
+  },
+  "61f03e8274576e66288b6b47": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/MegaPassApp"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/MegaPassApp"
+  },
+  "6177c3e1258d902d723ab302": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/nr1-workshop"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/nr1-workshop"
+  },
+  "61f03e8274576e66288b6b49": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/spaceship-prompt"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/spaceship-prompt"
+  },
+  "60e89ab747fb97257777cad3": {
+   "paths": [
+    "/Users/lamaral/dev/logging/logging-monitoring"
+   ],
+   "defaultPath": "/Users/lamaral/dev/logging/logging-monitoring"
+  },
+  "61f03e8274576e66288b6b46": {
+   "paths": [
+    "/Users/lamaral/dev/logging/woodshed"
+   ],
+   "defaultPath": "/Users/lamaral/dev/logging/woodshed"
+  },
+  "6144a1499d026b61961d8eb1": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/replica_sizer"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/replica_sizer"
+  },
+  "61f03e8274576e66288b6b45": {
+   "paths": [
+    "/Users/lamaral/dev/ssre/toolbox"
+   ],
+   "defaultPath": "/Users/lamaral/dev/ssre/toolbox"
+  },
+  "617320e42d284405daaf39d7": {
+   "paths": [
+    "/Users/lamaral/dev/staff-engineering/newrelic-kafka-clients-enhancements"
+   ],
+   "defaultPath": "/Users/lamaral/dev/staff-engineering/newrelic-kafka-clients-enhancements"
+  },
+  "60db03cbfd02673873b88bd2": {
+   "paths": [
+    "/Users/lamaral/dev/workloads/workloads"
+   ],
+   "defaultPath": "/Users/lamaral/dev/workloads/workloads"
+  },
+  "60cb1a990a79ad63f8d5c8a0": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/vizco-core"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/vizco-core"
+  },
+  "61f98971e1cba22c95725892": {
+   "paths": [
+    "/Users/lamaral/dev/lamaral/connect_four"
+   ],
+   "defaultPath": "/Users/lamaral/dev/lamaral/connect_four"
+  }
+ },
+ "version": "1.0.0"
+}

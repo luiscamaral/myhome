@@ -1,0 +1,55 @@
+diff --git a/node_modules/eslint-plugin-import/lib/rules/export.js b/node_modules/eslint-plugin-import/lib/rules/export.js
+index 5f810ee..2987893 100644
+--- a/node_modules/eslint-plugin-import/lib/rules/export.js
++++ b/node_modules/eslint-plugin-import/lib/rules/export.js
+@@ -45,6 +45,41 @@ function isTypescriptFunctionOverloads(nodes) {
+ 
+ }
+ 
++/**
++ * Detect merging Namespaces with Classes, Functions, or Enums like:
++ * ```ts
++ * export class Foo { }
++ * export namespace Foo { }
++ * ```
++ * @param {Set<Object>} nodes
++ * @returns {boolean}
++ */
++ function isTypescriptNamespaceMerging(nodes) {
++  const types = new Set(Array.from(nodes, node => node.parent.type));
++  const noNamespaceNodes = Array.from(nodes).filter((node) => node.parent.type !== 'TSModuleDeclaration');
++
++  const isMerging = (
++    types.has('TSModuleDeclaration') &&
++    (
++      types.size === 1 ||
++      // Merging with functions
++      (types.size === 2 && (types.has('FunctionDeclaration') || types.has('TSDeclareFunction'))) ||
++      (types.size === 3 && types.has('FunctionDeclaration') && types.has('TSDeclareFunction')) ||
++      // Merging with classes or enums
++      (types.size === 2 && (types.has('ClassDeclaration') || types.has('TSEnumDeclaration')) && noNamespaceNodes.length === 1)
++    )
++  );
++
++  if (!isMerging && types.has('TSModuleDeclaration') && (types.has('TSEnumDeclaration') || types.has('ClassDeclaration') || types.has('FunctionDeclaration') || types.has('TSDeclareFunction'))) {
++    // Remove namespace nodes to error only on other types
++    Array.from(nodes).forEach(node => {
++      if (node.parent.type === 'TSModuleDeclaration') nodes.delete(node);
++    });
++  }
++
++  return isMerging;
++}
++
+ module.exports = {
+   meta: {
+     type: 'problem',
+@@ -156,7 +191,7 @@ module.exports = {
+                   for (var _iterator3 = named[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {var _ref3 = _step3.value;var _ref4 = _slicedToArray(_ref3, 2);var name = _ref4[0];var nodes = _ref4[1];
+                     if (nodes.size <= 1) continue;
+ 
+-                    if (isTypescriptFunctionOverloads(nodes)) continue;var _iteratorNormalCompletion4 = true;var _didIteratorError4 = false;var _iteratorError4 = undefined;try {
++                    if (isTypescriptFunctionOverloads(nodes) || isTypescriptNamespaceMerging(nodes)) continue;var _iteratorNormalCompletion4 = true;var _didIteratorError4 = false;var _iteratorError4 = undefined;try {
+ 
+                       for (var _iterator4 = nodes[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {var node = _step4.value;
+                         if (name === 'default') {

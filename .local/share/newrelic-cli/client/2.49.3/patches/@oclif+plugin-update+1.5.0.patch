@@ -1,0 +1,85 @@
+diff --git a/node_modules/@oclif/plugin-update/lib/commands/update.js b/node_modules/@oclif/plugin-update/lib/commands/update.js
+index fd05a18..469689b 100644
+--- a/node_modules/@oclif/plugin-update/lib/commands/update.js
++++ b/node_modules/@oclif/plugin-update/lib/commands/update.js
+@@ -90,9 +90,12 @@ class UpdateCommand extends command_1.default {
+             return body;
+         }
+         catch (error) {
+-            if (error.statusCode === 403)
+-                throw new Error(`HTTP 403: Invalid channel ${this.channel}`);
+-            throw error;
++            this.debug(error.message);
++            let message = error.message;
++            if (error.statusCode === 403 || (error.statusCode === 404 && error.message.indexOf("Missing S3 key") >= 0))
++                message = `Invalid channel ${this.channel}`;
++            cli_ux_1.default.action.stop("error");
++            this.error(message, {code: error.code, exit: 1}) 
+         }
+     }
+     async downloadAndExtract(output, manifest, channel) {
+@@ -110,7 +113,7 @@ class UpdateCommand extends command_1.default {
+             arch: this.config.arch,
+             ext: 'gz',
+         }));
+-        const { response: stream } = await http.stream(gzUrl);
++        const { response: stream } = await http.stream(gzUrl, {timeout: 30000});
+         stream.pause();
+         const baseDir = manifest.baseDir || this.config.s3Key('baseDir', {
+             version,
+@@ -130,7 +133,11 @@ class UpdateCommand extends command_1.default {
+             }, 250, { leading: true, trailing: false });
+             stream.on('data', data => {
+                 current += data.length;
+-                updateStatus(`${filesize(current)}/${filesize(total)}`);
++                if (isNaN(total)) {
++                    updateStatus(`${filesize(current)}`);
++                } else {
++                    updateStatus(`${filesize(current)}/${filesize(total)}`);
++                }
+             });
+         }
+         stream.resume();
+@@ -144,7 +151,28 @@ class UpdateCommand extends command_1.default {
+         await this.ensureClientDir();
+         const output = path.join(this.clientRoot, this.updatedVersion);
+         if (!await fs.pathExists(output)) {
+-            await this.downloadAndExtract(output, manifest, channel);
++            try {
++                await this.downloadAndExtract(output, manifest, channel);;
++            } catch (err) {
++                let error = err;
++                if (error.code !== 'ETIMEDOUT' && error.code !== 'ENOTFOUND') {
++                    try {
++                        await this.downloadAndExtract(output, manifest, channel);
++                    } catch (e) {
++                        error = e;
++                    }
++                }
++                await this.config.runHook('update:error', {
++                    channel,
++                    error,
++                    manifest, 
++                    currentVersion: this.currentVersion,
++                    updatedVersion: this.updatedVersion
++                });
++                this.debug(error.message);
++                cli_ux_1.default.action.stop("error");
++                this.error(error.message, {code: error.code, exit: 1});
++            }
+         }
+         await this.setChannel();
+         await this.createBin(this.updatedVersion);
+diff --git a/node_modules/@oclif/plugin-update/lib/hooks/init.js b/node_modules/@oclif/plugin-update/lib/hooks/init.js
+index e8b16ee..3616093 100644
+--- a/node_modules/@oclif/plugin-update/lib/hooks/init.js
++++ b/node_modules/@oclif/plugin-update/lib/hooks/init.js
+@@ -29,7 +29,7 @@ exports.init = async function (opts) {
+             const m = await mtime(autoupdatefile);
+             let days = 1;
+             if (opts.config.channel === 'stable')
+-                days = 14;
++                days = 1;
+             m.setHours(m.getHours() + (days * 24));
+             return m < new Date();
+         }

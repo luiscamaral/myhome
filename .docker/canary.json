@@ -1,0 +1,14 @@
+{
+  "compose-versions": {
+    "v2.0.0": {
+      "active-percentage": 1,
+      "include-pro-users": false,
+      "default": 0.00
+    },
+    "v2.0.1": {
+      "active-percentage": 1,
+      "include-pro-users": false,
+      "default": 0.00
+    }
+  }
+}

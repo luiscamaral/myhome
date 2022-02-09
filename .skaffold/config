@@ -1,0 +1,7 @@
+global:
+  survey:
+    last-prompted: "2021-12-20T16:41:51-07:00"
+  collect-metrics: true
+  update:
+    last-prompted: "2021-12-21T14:48:05-07:00"
+kubeContexts: []

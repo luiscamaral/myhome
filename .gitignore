@@ -1,0 +1,110 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.Trash
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Cache
+.cache
+
+# Synology
+.SynologyDrive
+.DS_Store
+
+# Minikube 
+.minikube
+
+# Maven
+.m2
+
+# Gradle
+.gradle
+
+# Kubernetes
+.kube/cache
+
+# Node
+**/node_modules
+.node-gyp
+node_modules
+.npm
+.nvm
+
+# pyenv, jenv
+.pyenv
+.jenv
+
+
+# Grand Central
+.grand-central-build-scripts
+
+# AWS
+.aws/**/cache
+
+# New Relic
+.newrelic/**/cache
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# ZSH
+.zsh_sessions
+
+## Home
+############
+Applications
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Postman
+Public
+SynologyDrive
+VirtualBox*
+dev/**
+fonts
+go
+go-workspace
+go16
+*.log
+kafka
+*.patch
+*.split
+prov
+vault-root

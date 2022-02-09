@@ -1,0 +1,1 @@
+module.exports = require('/Users/lamaral/.local/share/newrelic-cli/client/current/node_modules/@datanerd/cli-plugin-internal-nerdpack/src/jest/config/nerdpack-jest.config.js');

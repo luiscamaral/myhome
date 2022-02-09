@@ -1,0 +1,107 @@
+{
+  "name": "@datanerd/nr1-internal",
+  "description": "New Relic One CLI - Internal",
+  "version": "2.49.3",
+  "author": "New Relic <nr1@newrelic.com>",
+  "bin": {
+    "nr1": "./bin/run"
+  },
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "nr1",
+    "dirname": "newrelic-cli",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-autocomplete",
+      "@oclif/plugin-update",
+      "@oclif/plugin-warn-if-update-available",
+      "@oclif/plugin-plugins",
+      "@datanerd/3pp-cli-profiles",
+      "@datanerd/3pp-cli-nrql",
+      "@datanerd/3pp-cli-nerdpack",
+      "@datanerd/3pp-cli-nerdpack-registry",
+      "@datanerd/3pp-cli-nerdpack-serve",
+      "@datanerd/3pp-cli-create",
+      "@datanerd/cli-plugin-catalog",
+      "@datanerd/cli-plugin-config",
+      "@datanerd/cli-plugin-nerdpack-clone",
+      "@datanerd/cli-plugin-internal-create-templates",
+      "@datanerd/cli-plugin-internal-nerdpack"
+    ],
+    "update": {
+      "s3": {
+        "bucket": "cli-assets-internal",
+        "host": "https://cli-assets.service.datanerd.us/cli"
+      },
+      "node": {
+        "version": "14.15.1"
+      }
+    },
+    "macos": {
+      "identifier": "com.newrelic.nr1-cli",
+      "sign": "Developer ID Installer: New Relic Inc",
+      "codesign": {
+        "certificateId": "CE7F891D104523CF207A5F2574F37E7A68918842",
+        "files": [
+          "node_modules/watchpack-chokidar2/node_modules/fsevents/build/Release/.node",
+          "node_modules/watchpack-chokidar2/node_modules/fsevents/build/Release/fse.node",
+          "node_modules/node-sass/vendor/darwin-x64-83/binding.node",
+          "node_modules/fsevents/fsevents.node",
+          "node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app/Contents/MacOS/terminal-notifier"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "patch": "patch-package || true",
+    "postinstall": "npm run patch",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "bugs": "https://github.com/wanda/cli/issues",
+  "dependencies": {
+    "@datanerd/3pp-cli-create": "^2.0.0",
+    "@datanerd/3pp-cli-nerdpack": "^2.0.0",
+    "@datanerd/3pp-cli-nerdpack-registry": "^2.0.0",
+    "@datanerd/3pp-cli-nerdpack-serve": "^2.0.0",
+    "@datanerd/3pp-cli-nrql": "^2.0.0",
+    "@datanerd/3pp-cli-profiles": "^2.0.0",
+    "@datanerd/cli-plugin-catalog": "^2.2.1",
+    "@datanerd/cli-plugin-config": "^2.0.0",
+    "@datanerd/cli-plugin-internal-create-templates": "^2.0.0",
+    "@datanerd/cli-plugin-internal-nerdpack": "^2.0.0",
+    "@datanerd/cli-plugin-nerdpack-clone": "^2.0.0",
+    "@oclif/command": "1.8.0",
+    "@oclif/config": "1.17.0",
+    "@oclif/plugin-autocomplete": "0.1.5",
+    "@oclif/plugin-help": "2.2.3",
+    "@oclif/plugin-not-found": "1.2.4",
+    "@oclif/plugin-plugins": "1.10.2",
+    "@oclif/plugin-update": "1.5.0",
+    "@oclif/plugin-warn-if-update-available": "1.7.2"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "1.22.0",
+    "patch-package": "6.4.7"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/wanda/cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "repository": "wanda/cli",
+  "gitHead": "2b11c6fa675906aec11018e47bc4656005416245"
+}
